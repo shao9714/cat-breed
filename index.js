@@ -21,6 +21,7 @@ app.get("/cat", async (req, res) => {
   //search user input, return the breed_id
 
   const breedName = req.query.breed;
+  const limit = parseInt(req.query.limit);
 
   let result = await fetch(
     `https://api.thecatapi.com/v1/breeds/search?q=${breedName}`,
@@ -33,8 +34,8 @@ app.get("/cat", async (req, res) => {
   );
 
   result = await result.json();
+
   let breed_id = result[0].id;
-  console.log(breed_id);
 
   //search for images using breeds_id
 
@@ -43,7 +44,7 @@ app.get("/cat", async (req, res) => {
   const queryLimit = 3;
 
   result = await fetch(
-    `https://api.thecatapi.com/v1/images/search?breed_id=${breed_id}&limit=${queryLimit}`
+    `https://api.thecatapi.com/v1/images/search?breed_id=${breed_id}&limit=${limit}`
   );
 
   const imageResult = await result.json();
