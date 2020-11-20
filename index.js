@@ -7,19 +7,20 @@ app.use(
   express.urlencoded({
     extended: true,
   }),
-  express.json()
+  express.json(),
+  express.static('.')
 );
 const PORT = 3117;
 
 app.get("/", (req, res) => {
-  res.send("received!");
+  res.sendFile("home.html", { root : __dirname});
 });
 
 app.get("/cat", async (req, res) => {
   const apiKey = "9a87cf04-fe3c-4666-92ed-5eb26534b071";
   //search user input, return the breed_id
 
-  const breedName = "sib";
+  const breedName = req.query.breed;
 
   let result = await fetch(
     `https://api.thecatapi.com/v1/breeds/search?q=${breedName}`,
@@ -33,6 +34,7 @@ app.get("/cat", async (req, res) => {
 
   result = await result.json();
   let breed_id = result[0].id;
+  console.log(breed_id);
 
   //search for images using breeds_id
 
@@ -53,7 +55,9 @@ app.get("/cat", async (req, res) => {
 
   console.log(imagesUrl);
 
-  res.send("received");
+  res.status(200).json({
+    imagesUrl
+  });
 });
 
 app.listen(PORT, () => {

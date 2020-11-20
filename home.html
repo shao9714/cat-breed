@@ -3,10 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="home.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="home.js"></script>
         <title>Cats</title>
     </head>
 
-    <body>
-        <p>Welcome to the cat app</p>
+    <body onload="init()">
+        <div class="landing-card">
+          <h1>Welcome to the cat app</h1>
+          <input class="form-control" id="breed-input" type="text" placeholder="Press Enter">
+          <div id="cat-images"></div>
+        </div>
     </body>
 </html>
