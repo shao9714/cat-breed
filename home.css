@@ -2,8 +2,7 @@ body {
     background: url('./background.jpg');
 }
 .landing-card {
-    background: white;
-    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.8);
     text-align: center;
     margin: 20%;
     padding-top: 5%;
@@ -27,4 +26,7 @@ body {
 img {
     width: 300px;
     height: 200px;
+}
+p {
+    font-weight: 400;
 }

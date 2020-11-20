@@ -33,8 +33,16 @@ app.get("/cat", async (req, res) => {
   );
 
   result = await result.json();
+  if (result.length == 0) {
+    const imagesUrl = [];
+    return res.status(200).json({
+      imagesUrl,
+      "breed_name": "no_result"
+    });
+  }
+
   let breed_id = result[0].id;
-  console.log(breed_id);
+  let breed_name = result[0].name;
 
   //search for images using breeds_id
 
@@ -56,7 +64,8 @@ app.get("/cat", async (req, res) => {
   console.log(imagesUrl);
 
   res.status(200).json({
-    imagesUrl
+    imagesUrl,
+    breed_name
   });
 });
 
