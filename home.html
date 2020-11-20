@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="home.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="home.js"></script>
-        <title>Cats</title>
-    </head>
+    <link rel="stylesheet" href="home.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="home.js"></script>
+    <title>Cats</title>
+  </head>
 
-    <body onload="init()">
-        <div class="landing-card">
-          <h1>Welcome to the cat app</h1>
-          <input class="form-control" id="breed-input" type="text" placeholder="Press Enter">
-          <div id="cat-images"></div>
-        </div>
-    </body>
+  <body onload="init()">
+    <div class="landing-card">
+      <h1>Welcome to the cat app</h1>
+
+      <div class="search-dropdown">
+        <select id="number-limit" name="number-limit">
+          <option name="1">1</option>
+          <option name="2">2</option>
+          <option name="3">3</option>
+          <option name="4">4</option>
+          <option name="5">5</option>
+          <option name="6">6</option>
+          <option name="7">7</option>
+          <option name="8">8</option>
+          <option name="9">9</option>
+          <option name="10">10</option>
+        </select>
+      </div>
+
+      <input
+        class="form-control"
+        id="breed-input"
+        type="text"
+        placeholder="Press Enter"
+      />
+      <div id="cat-images"></div>
+    </div>
+  </body>
 </html>
