@@ -8,12 +8,12 @@ app.use(
     extended: true,
   }),
   express.json(),
-  express.static('.')
+  express.static(".")
 );
-const PORT = 3117;
+const PORT = process.env.PORT || 3117;
 
 app.get("/", (req, res) => {
-  res.sendFile("home.html", { root : __dirname});
+  res.sendFile("home.html", { root: __dirname });
 });
 
 app.get("/cat", async (req, res) => {
@@ -56,7 +56,7 @@ app.get("/cat", async (req, res) => {
   console.log(imagesUrl);
 
   res.status(200).json({
-    imagesUrl
+    imagesUrl,
   });
 });
 
