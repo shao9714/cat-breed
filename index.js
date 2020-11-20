@@ -34,7 +34,6 @@ app.get("/cat", async (req, res) => {
   );
 
   result = await result.json();
-<<<<<<< HEAD
   if (result.length == 0) {
     const imagesUrl = [];
     return res.status(200).json({
@@ -45,10 +44,6 @@ app.get("/cat", async (req, res) => {
 
   let breed_id = result[0].id;
   let breed_name = result[0].name;
-=======
-
-  let breed_id = result[0].id;
->>>>>>> 965d2bd477fb5b8858c3443e90a3644e6a045da2
 
   //search for images using breeds_id
 
@@ -71,10 +66,7 @@ app.get("/cat", async (req, res) => {
 
   res.status(200).json({
     imagesUrl,
-<<<<<<< HEAD
     breed_name
-=======
->>>>>>> 965d2bd477fb5b8858c3443e90a3644e6a045da2
   });
 });
 
